@@ -4,54 +4,35 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
+##################################################################################################################################
 
-def encrypt(plain_text=text,shift_amount=shift):
-    if direction == 'encode':
-        new_text = ""
-        for i in text:
-            
-            # position of letter
-            position = alphabet.index(i)
-            
-            # new position of letter
-            shift_position = position + shift
-
-            if shift_position <= 25:
-                # new letter from shifted position
-                new_i = alphabet[shift_position]
-
-                # append new text
-                new_text += new_i
-            else:
-                # remainder of 26
-                remainder = shift_position % 26
-
-                # new letter from shifted position
-                new_i = new_i = alphabet[remainder]
-                
-                # append new text
-                new_text += new_i
-        # print output
-        print(f"The encoded text is {new_text}.")
-    elif direction == "decode":
-        
+def caesar(cipher_direction=direction, plain_text=text,shift_amount=shift):
     
-    
-    
-    
-    
-    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
-    #e.g. 
-    #plain_text = "hello"
-    #shift = 5
-    #cipher_text = "mjqqt"
-    #print output: "The encoded text is mjqqt"
+    #initialize end text
+    end_text = ""
 
-    ##HINT: How do you get the index of an item in a list:
-    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
+    # identify direction
+    if cipher_direction == 'decode':
+        shift_amount *= -1
 
-    ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
+    #for loop - each letter
+    for letter in text:
 
-#TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
-encrypt()
+        # find position
+        position = alphabet.index(letter)
+
+        # shift position
+        shift_position = position + shift_amount
+
+        # if shift amount pass list index, we get remainder
+        if shift_position >25:
+            shift_position %= 26
+
+        # append the letter to end_text
+        end_text += alphabet[shift_position]
+
+    #print result
+    print(f"The {direction}d text is {end_text}.")
+
+
+caesar()
