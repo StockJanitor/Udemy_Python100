@@ -12,7 +12,7 @@ coffee = 500
 money = 0.00
 
 
-def check_resource(coffe):
+def check_resource(coffee):
     '''type of coffee, resources'''
     
     # conditions 
