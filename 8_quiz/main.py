@@ -8,8 +8,9 @@ question_bank = []
 for i in question_data:
     question_bank.append(Question(i["text"], i["answer"]))
 
-
+# initialize quiz class
 q = QuizBrain(question_bank)
 
+# run each question
 while not q.still_has_questions():
     q.next_question()
