@@ -1,6 +1,6 @@
 from itertools import count
 from tkinter import *
-import math
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -38,7 +38,7 @@ def start_timer():
         count_down(break_sec)
     else:
         timer_label.config(text="Work Work", fg=GREEN,font=(FONT_NAME,35))
-        count_down(20)
+        count_down(work_sec)
     
     marks = ""
     # session = math.floor(reps/2)
@@ -89,7 +89,8 @@ timer_label.grid(column=1,row=0)
 canvas = Canvas(width=200,height=224,bg=YELLOW,highlightthickness=0)
 
 #import image
-tomato_img = PhotoImage(file=r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\14_tkinter\tomato.png")
+path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\14_tkinter_timer\tomato.png"
+tomato_img = PhotoImage(file=path)
 #insert image
 canvas.create_image(100,112,image=tomato_img)
 
