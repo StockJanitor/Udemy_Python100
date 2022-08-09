@@ -32,7 +32,8 @@ if today_tuple in birthdays_dict:
         # send mail
         connection.sendmail(
             from_addr=my_email, 
-            to_addrs="stockjanitor@gmail.com",
-            msg=f"Subject: Happy Birthday!\n\n{contents}"
+            to_addrs=birthday_person["email"],
+            msg=f"Subject: Happy Birthday!!\n\n{contents}"
             )
 
+# Python anywhere
