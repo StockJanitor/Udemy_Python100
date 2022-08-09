@@ -7,6 +7,8 @@ import random
 
 path_data2 = r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\16_flashy\data\words_to_learn.csv"
 path_data = r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\16_flashy\data\french_words.csv"
+
+
 try:
     data = pd.read_csv(path_data2)
 except FileNotFoundError:
