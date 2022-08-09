@@ -1,5 +1,6 @@
 from itertools import count
 from tkinter import *
+from tkinter import messagebox
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -64,8 +65,11 @@ def count_down(count):
         # count down part
         global timer
         timer = window.after(1000,count_down,count-1)
-    else:
-        start_timer()
+
+    if count == 0:
+        messagebox.showinfo(title="InfoBox",message="Session has ended.")
+    # else:
+    #     start_timer()
         # global marks
         # session = math.floor(reps/2)
         # for _ in range(session):
