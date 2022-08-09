@@ -16,15 +16,20 @@ timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 def timer_reset():
+    global timer
     window.after_cancel(timer)
     canvas.itemconfig(timer_text,text="00:00")
-    timer_label.config(text="Timer")
+    timer_label.config(text="Timer",fg=GREEN,bg=YELLOW,font=(FONT_NAME,35))
     check_marks.config(text="")
     global reps
     reps = 0
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
-    global reps 
+    global reps,timer
+    try:
+        window.after_cancel(timer)
+    except:
+        pass
     reps +=1
 
     work_sec= WORK_MIN * 60
@@ -94,10 +99,10 @@ canvas = Canvas(width=200,height=224,bg=YELLOW,highlightthickness=0)
 
 #import image
 #surface path
-path=r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\14_tkinter_timer\tomato.png"
+# path=r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\14_tkinter_timer\tomato.png"
 
 #desktop path
-# path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\14_tkinter_timer\tomato.png"
+path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\14_tkinter_timer\tomato.png"
 tomato_img = PhotoImage(file=path)
 #insert image
 canvas.create_image(100,112,image=tomato_img)
