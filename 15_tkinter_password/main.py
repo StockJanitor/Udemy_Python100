@@ -1,8 +1,9 @@
+from email import message
 from tkinter import *
 from tkinter import messagebox
 from random import randint,shuffle,choice
 import pyperclip
-
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -26,14 +27,53 @@ def save():
     password = password_input.get()
     is_ok=messagebox.askokcancel(title="Check",message=f"{website}\n{user}\n{password}")
     
+    new_data = {
+        website:
+        {
+            "email": user,
+            "password": password,
+        }
+    }
+
+    # save file to json
     if is_ok:
-        path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\14_tkinter_timer\data.txt"
-        with open(path,"a") as data_file:
-            data_file.write(f"{website} | {user} | {password}\n")
+        path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\15_tkinter_password\data.json"
+        try:
+            with open(path,"r") as data_file:
+                #read data
+                data = json.load(data_file)
+        except FileNotFoundError:
+            with open(path,"w") as data_file:
+                json.dump(new_data,data_file,indent=4)
+        else:
+            #update data
+            data.update(new_data)
+            with open(path, "w") as data_file:
+                #saving updated data
+                json.dump(data, data_file, indent=4)
+        finally:
             website_input.delete(0,END)
             password_input.delete(0,END)
 
 
+
+
+def search():
+    path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\15_tkinter_password\data.json"
+    try:
+        website = website_input.get()
+        with open(path) as data_file:
+            data = json.load(data_file)
+    except FileNotFoundError:
+        messagebox.showinfo(title="No File Exist", message="File does not exist.")
+    else:
+        if website in data:
+            email = data[website]["email"]
+            password = data[website]["password"]
+            messagebox.showinfo(title=website,message= f"{email}\n{password}")
+        else:
+            messagebox.showinfo(title="Not Found", message="Item not found.")
+        
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -51,6 +91,8 @@ lock_image = PhotoImage(file=path)
 canvas.create_image(100,100,image=lock_image)
 canvas.grid(column=1,row=0)
 
+
+
 ############### Website ###############
 #Part 1 Label
 website_text = Label(text="Website:")
@@ -60,6 +102,13 @@ website_text.grid(column=0,row=1)
 website_input = Entry(width=40)
 website_input.grid(column=1,row=1)
 website_input.focus()
+
+# Part 3 Search
+search_button = Button(text="Search", command=search,width=13)
+search_button.grid(row=1,column=2)
+
+
+
 ############### Email/Username ###############
 #Part 1 Label
 username_text = Label(text="Email/Username:")
@@ -69,7 +118,11 @@ username_text.grid(column=0,row=2)
 username_input = Entry(width=40)
 username_input.grid(column=1,row=2)
 username_input.insert(0,"@gmail.com")
-############### Email/Username ###############
+
+
+
+
+############### Password ###############
 #Part 1 Label
 password_text = Label(text="Password:")
 password_text.grid(column=0,row=3)
