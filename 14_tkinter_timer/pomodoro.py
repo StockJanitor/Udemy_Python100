@@ -1,6 +1,7 @@
 from itertools import count
 from tkinter import *
 from tkinter import messagebox
+import os
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -9,7 +10,7 @@ GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 WORK_MIN = 25
-SHORT_BREAK_MIN = 5
+SHORT_BREAK_MIN = 10
 LONG_BREAK_MIN = 20
 reps = 0
 timer = None
@@ -97,12 +98,15 @@ timer_label.grid(column=1,row=0)
 #canvas and size
 canvas = Canvas(width=200,height=224,bg=YELLOW,highlightthickness=0)
 
+
+# get current working directory
+path = os.getcwd() +"\\14_tkinter_timer\\tomato.png"
 #import image
 #surface path
-path=r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\14_tkinter_timer\tomato.png"
+# path=r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\14_tkinter_timer\tomato.png"
 
 #desktop path
-# path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\14_tkinter_timer\tomato.png"
+# path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy_Python\14_tkinter_timer\tomato.png"
 tomato_img = PhotoImage(file=path)
 #insert image
 canvas.create_image(100,112,image=tomato_img)
@@ -121,5 +125,8 @@ reset_button.grid(column=2,row=2)
 
 check_marks =Label(text="",fg=GREEN,highlightthickness=0,bg=YELLOW)
 check_marks.grid(column=1,row=3)
+
+start_button.focus_force()
+
 
 window.mainloop()

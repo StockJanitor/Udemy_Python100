@@ -4,9 +4,6 @@ from quiz_brain import QuizBrain
 from ui import QuizInterface
 
 
-
-
-
 question_bank = []
 
 # store question data into question bank
@@ -21,6 +18,8 @@ for question in question_data:
 
 # pass in question bank to QuizBrain
 quiz = QuizBrain(question_bank)
+
+# pass in quizBrain and question bank into interface
 quiz_ui = QuizInterface(quiz)
 
 # while quiz.still_has_questions():
