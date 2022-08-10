@@ -99,10 +99,10 @@ canvas = Canvas(width=200,height=224,bg=YELLOW,highlightthickness=0)
 
 #import image
 #surface path
-# path=r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\14_tkinter_timer\tomato.png"
+path=r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\14_tkinter_timer\tomato.png"
 
 #desktop path
-path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\14_tkinter_timer\tomato.png"
+# path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy\14_tkinter_timer\tomato.png"
 tomato_img = PhotoImage(file=path)
 #insert image
 canvas.create_image(100,112,image=tomato_img)
