@@ -49,12 +49,17 @@ def is_night():
 
 
 while if_loop:
+    print("\n\n")
+    print(f"time now: {datetime.now()}")
+    print(f"utc now: {datetime.utcnow()}")
+    print("\n")
     if is_night and is_iss_overhead():
         with smtplib.SMTP("smtp.mail.yahoo.com") as connection:
         
             # secure the connection
             connection.starttls()
             
+            3
             # login
             connection.login(user=my_email, password =password)
 
