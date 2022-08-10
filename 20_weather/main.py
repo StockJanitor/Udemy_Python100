@@ -40,6 +40,7 @@ for hour_data in weather_slice:
     if int(600)<700:
         will_rain = True
 
+
 # print out feedback
 if will_rain:
     client = Client(account_sid, auth_token)
