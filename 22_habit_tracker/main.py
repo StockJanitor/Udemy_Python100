@@ -5,7 +5,7 @@ today = datetime.now()
 today = today.strftime("%Y%m%d")
 donuts = "210"
 USERNAME ="stockjanitor"
-TOKEN = "hfjkeakfnek2"
+TOKEN = ""
 headers={
     "X-USER-TOKEN":TOKEN
 }
@@ -15,7 +15,7 @@ url_create_graph = f"https://pixe.la/v1/users/{USERNAME}/graphs"
 
 ################### create an account request and params ###################
 user_params = {
-    "token": "hfjkeakfnek2",
+    "token": "",
     "username": "stockjanitor",
     "agreeTermsOfService" : "yes",
     "notMinor" : "yes"
