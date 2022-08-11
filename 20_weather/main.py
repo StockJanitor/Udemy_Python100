@@ -6,7 +6,7 @@ from twilio.rest import Client
 # variables
 MY_LAT = 33.968130
 MY_LONG = -117.909752
-api_key = "0a7d474222811f0191ce356fe2285e7e"
+api_key = ""
 
 url = "https://api.openweathermap.org/data/2.5/onecall"
 # url="https://api.openweathermap.org/data/2.5/weather"
@@ -19,8 +19,8 @@ weather_parameter={
 
 
 # variables fot twilio
-account_sid="AC9deba8e6c590fdb6f488552ae91636f3"
-auth_token = "2f1eed22c7718400bb658b46a3f4e749"
+account_sid=""
+auth_token = ""
 
 
 # get request
