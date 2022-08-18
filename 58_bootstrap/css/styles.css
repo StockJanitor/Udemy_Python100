@@ -7,13 +7,12 @@ body {
 
     background-color: #ff4c68;
     color: #fff;
-    padding: 7% 15%;
+    /* padding: 7% 15%; */
 
 }
 
 .containter-fluid {
-
-    padding: 7% 15%;
+    padding: 3% 15% 7%;
 }
 
 /* front page line */
@@ -27,9 +26,9 @@ h1 {
 
 /* h2 = page 3 feedback quotes */
 h2 {
-    font-family:"Montserrat";
+    font-family: "Montserrat";
     font-size: 3rem;
-    line-height:1.5;
+    line-height: 1.5;
 }
 
 
@@ -45,16 +44,20 @@ p {
     color: #8f8f8f;
 }
 
+.after-bar {
+    padding-top: 5%;
+}
+
 /* Navigation Bar */
 .navbar {
     padding: 0 0 4.5rem;
-    
+
 }
 
 
 .navbar-brand {
     font: "Ubuntu";
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 500;
 }
 
@@ -72,15 +75,27 @@ p {
     margin: 5% 3% 5% 0;
 }
 
+/* sighup Buttons */
+.signup-button {
+    margin: 5% 3% 5% 0;
+}
+
 /* Title Image */
 .title-image {
     width: 60%;
     transform: rotate(25deg);
+    right: 30%;
+    position: absolute;
+
 }
 
 
 #features {
     padding: 7% 15%;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+
 }
 
 .feature-box {
@@ -103,11 +118,11 @@ p {
 
     text-align: center;
     background-color: #ff4c68;
-    color:#fff;
+    color: #fff;
 }
 
 .testimonial-image {
-    width:10%;
+    width: 10%;
     border-radius: 100%;
     margin: 20px;
 
@@ -126,9 +141,20 @@ p {
 .press-image {
     width: 15%;
     margin: 20px 20px 50px;
-    
+
 }
 
 .carousel-item {
     padding: 7% 15%;
+}
+
+/* Pricing Section */
+
+#pricing {
+    padding: 100px;
+    text-align: center;
+}
+
+.pricing-column {
+    padding: 3% 2%;
 }
