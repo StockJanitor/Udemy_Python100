@@ -27,14 +27,14 @@ user_params = {
 
 ################### create graph request and params ###################
 graph_params = {
-    "id" : "donut",
-    "name" : "Donut Activities",
-    "unit" : "donuts",
+    "id" : "steak",
+    "name" : "Steak Activities",
+    "unit" : "steaks",
     "type" : "float",
     "color" : "shibafu"
 }
-# response = requests.post(url = url_create_graph, json=graph_params,headers=headers)
-# print(response.text)
+response = requests.post(url = url_create_graph, json=graph_params,headers=headers)
+print(response.text)
 
 
 
