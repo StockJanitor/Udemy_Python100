@@ -3,6 +3,9 @@ from tkinter import *
 from tkinter import messagebox
 import os
 
+# terminal type:
+# auto-py-to-exe
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -100,13 +103,13 @@ canvas = Canvas(width=200,height=224,bg=YELLOW,highlightthickness=0)
 
 
 # get current working directory
-path = os.getcwd() +"\\14_tkinter_timer\\tomato.png"
+# path = os.getcwd() +"\\14_tkinter_timer\\tomato.png"
 #import image
 #surface path
 # path=r"C:\Users\chenx\Desktop\Git\Class\Udemy_Python100\14_tkinter_timer\tomato.png"
 
 #desktop path
-# path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy_Python\14_tkinter_timer\tomato.png"
+path = r"C:\Users\Gumo\Desktop\Git\Class\Udemy_Python\14_tkinter_timer\tomato.png"
 tomato_img = PhotoImage(file=path)
 #insert image
 canvas.create_image(100,112,image=tomato_img)
