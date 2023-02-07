@@ -3,10 +3,16 @@
 import requests
 from twilio.rest import Client
 
+# Load key
+path_token = r"C:\Users\Gumo\Desktop\Git\notebook\keys\openweather.txt" 
+with open(path_token,"r") as newsfile:
+    token = newsfile.readlines()
+
+
 # variables
 MY_LAT = 33.968130
 MY_LONG = -117.909752
-api_key = ""
+api_key = token
 
 url = "https://api.openweathermap.org/data/2.5/onecall"
 # url="https://api.openweathermap.org/data/2.5/weather"
